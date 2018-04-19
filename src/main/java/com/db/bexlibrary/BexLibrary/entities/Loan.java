@@ -1,11 +1,10 @@
-package entities;
+package com.db.bexlibrary.BexLibrary.entities;
 
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Data

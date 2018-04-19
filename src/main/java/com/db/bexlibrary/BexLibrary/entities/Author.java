@@ -1,7 +1,6 @@
-package entities;
+package com.db.bexlibrary.BexLibrary.entities;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

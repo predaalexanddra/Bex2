@@ -1,4 +1,4 @@
-package entities;
+package com.db.bexlibrary.BexLibrary.entities;
 
 import lombok.Data;
 
