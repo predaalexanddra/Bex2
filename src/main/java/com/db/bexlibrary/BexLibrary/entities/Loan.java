@@ -1,5 +1,6 @@
 package com.db.bexlibrary.BexLibrary.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,7 +14,7 @@ public class Loan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name = "id") private int id;
 
     @NotNull
     private Date borrowDate;
@@ -23,11 +24,12 @@ public class Loan {
     private boolean isReturned = false;
 
 
-
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "fk_loanUser")
     private User loanUser;
 
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "fk_loanBook")
     private Book loanBook;

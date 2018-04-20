@@ -1,5 +1,6 @@
 package com.db.bexlibrary.BexLibrary.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class KeyWords {
     private String word;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "fk_bookKeyword")
     private Book book;
 }

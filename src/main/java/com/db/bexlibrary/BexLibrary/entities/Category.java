@@ -1,5 +1,6 @@
 package com.db.bexlibrary.BexLibrary.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class Category {
 
     @NotNull
     private String categoryName;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "category")
     private List<Book> booklist;
 }

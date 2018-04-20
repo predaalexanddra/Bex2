@@ -12,20 +12,17 @@ import java.util.List;
 
 @SpringBootApplication
 @EntityScan( basePackages = "com/db/bexlibrary/BexLibrary/entities")
-public class BexLibraryApplication implements CommandLineRunner  {
-
-	@Autowired
-	BookRepo bookRepo;
+public class BexLibraryApplication {
 
 	public static void main(String[] args){
 		SpringApplication.run(BexLibraryApplication.class, args);
 	}
-	@Override
-	public void run(String[] args) {
-
-		List<Book> books=bookRepo.findAll();
-		System.out.println(books);
-
-	}
+//	@Override
+//	public void run(String[] args) {
+//
+//		List<Book> books=bookRepo.findAll();
+//		System.out.println(books);
+//
+//	}
 
 }
