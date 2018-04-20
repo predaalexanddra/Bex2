@@ -18,7 +18,7 @@ public class BexLibraryApplicationTests {
 
 	@Test
 	public void testEmail(){
-		mailSender.sendMail("bexlibrary18@gmail.com","aliprd1996@gmail.com","Test mail","Heeeeeeeeeeey");
+		//mailSender.sendMail("bexlibrary18@gmail.com","aliprd1996@gmail.com","Test mail","Heeeeeeeeeeey");
 	}
 
 }

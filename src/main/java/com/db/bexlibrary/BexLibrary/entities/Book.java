@@ -31,7 +31,6 @@ public class Book {
     private int noAvailableCopies;
 
     @NotNull
-    private String imgPath;
 
 
     @ManyToOne
@@ -39,12 +38,7 @@ public class Book {
     private Category category;
 
     @ManyToMany
-    @JoinTable(name = "Book_Author",joinColumns = {@JoinColumn(name="fk_idBook")}, inverseJoinColumns ={ @JoinColumn(name="fk_idAuthor")}
-
-
-
-
-    )
+    @JoinTable(name = "Book_Author",joinColumns = {@JoinColumn(name="fk_idBook")}, inverseJoinColumns ={ @JoinColumn(name="fk_idAuthor")})
     private List<Author> author;
 
     @OneToMany(mappedBy = "book")
@@ -54,6 +48,11 @@ public class Book {
     @OneToMany(mappedBy = "loanBook")
     private List<Loan>  BookLoan;
 
-
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }
