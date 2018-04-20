@@ -15,7 +15,7 @@ public class Author {
     private int id;
 
     @NotNull
-    private String name;
+    private String authorName;
 
     @ManyToMany(mappedBy ="author")
     private List<Book> book;

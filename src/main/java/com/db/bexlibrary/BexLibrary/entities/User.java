@@ -22,13 +22,13 @@ public class User {
     @NotNull
     private int noPen = 0;
     @NotNull
-    private boolean flagBlacklist;
+    private boolean isBlacklist;
     @Nullable
     private Date blackDate;
     @NotNull
-    private boolean flagAdmin = false ;
+    private boolean isAdmin = false ;
     @NotNull
-    private int noBorrowed = 0;
+    private int noBorrowedBooks = 0;
 
    @OneToMany(mappedBy = "loanUser")
    private List<Loan> LoanList;

@@ -17,6 +17,6 @@ public class KeyWords {
     private String word;
 
     @ManyToOne
-    @JoinColumn(name = "Book_Keyword")
+    @JoinColumn(name = "fk_bookKeyword")
     private Book book;
 }

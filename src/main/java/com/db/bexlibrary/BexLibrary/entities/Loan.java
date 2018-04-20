@@ -20,16 +20,16 @@ public class Loan {
     @NotNull
     private Date returnDate;
     @NotNull
-    private boolean returned = false;
+    private boolean isReturned = false;
 
 
 
     @ManyToOne()
-    @JoinColumn(name = "loanUser")
+    @JoinColumn(name = "fk_loanUser")
     private User loanUser;
 
     @ManyToOne()
-    @JoinColumn(name = "bookCEVA")
+    @JoinColumn(name = "fk_loanBook")
     private Book loanBook;
 
 }

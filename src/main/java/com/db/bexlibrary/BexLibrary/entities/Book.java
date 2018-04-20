@@ -22,24 +22,29 @@ public class Book {
     private double rating = 0.0;
 
     @Nullable
-    private int ratingsGiven = 0;
+    private int givenRatings = 0;
 
     @NotNull
-    private int no_ex;
+    private int noCopies;
 
     @NotNull
-    private int no_av_ex;
+    private int noAvailableCopies;
 
     @NotNull
-    private String img_path;
+    private String imgPath;
 
 
     @ManyToOne
-    @JoinColumn(name = "idCategory")
+    @JoinColumn(name = "fk_bookCategory")
     private Category category;
 
     @ManyToMany
-    @JoinTable(name = "Book_Author")
+    @JoinTable(name = "Book_Author",joinColumns = {@JoinColumn(name="fk_idBook")}, inverseJoinColumns ={ @JoinColumn(name="fk_idAuthor")}
+
+
+
+
+    )
     private List<Author> author;
 
     @OneToMany(mappedBy = "book")
