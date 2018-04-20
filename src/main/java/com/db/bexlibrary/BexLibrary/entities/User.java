@@ -1,5 +1,6 @@
 package com.db.bexlibrary.BexLibrary.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.lang.Nullable;
 
@@ -14,23 +15,33 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String email;
+    @Column(name = "email") private String email;
 
     @NotNull
-    private String password;
+    @Column(name = "password") private String password;
 
     @NotNull
-    private int noPen = 0;
+    @Column(name = "noPen")private int noPen = 0;
+
     @NotNull
-    private boolean isBlacklist;
+    @Column(name = "isBlackList") private boolean isBlacklist;
+
     @Nullable
-    private Date blackDate;
-    @NotNull
-    private boolean isAdmin = false ;
-    @NotNull
-    private int noBorrowedBooks = 0;
+    @Column(name = "blackDate") private Date blackDate;
 
-   @OneToMany(mappedBy = "loanUser")
-   private List<Loan> LoanList;
+    @NotNull
+    @Column(name = "isAdmin") private boolean isAdmin = false ;
+
+    @NotNull
+    @Column(name = "noBorrowedBooks") private int noBorrowedBooks = 0;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "loanUser")
+    private List<Loan> LoanList;
+
+    @ManyToMany
+    @JoinTable(name = "Wishlist",joinColumns = {@JoinColumn(name="fk_idUser")}, inverseJoinColumns ={ @JoinColumn(name="fk_idBook")})
+    private List<Book> books;
+
 
 }
