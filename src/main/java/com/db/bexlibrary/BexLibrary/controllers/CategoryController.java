@@ -1,8 +1,6 @@
 package com.db.bexlibrary.BexLibrary.controllers;
 
-import com.db.bexlibrary.BexLibrary.entities.Book;
 import com.db.bexlibrary.BexLibrary.entities.Category;
-import com.db.bexlibrary.BexLibrary.repositories.BookRepo;
 import com.db.bexlibrary.BexLibrary.repositories.CategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

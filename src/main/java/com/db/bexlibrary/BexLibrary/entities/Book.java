@@ -54,6 +54,9 @@ public class Book {
     @ManyToMany(mappedBy = "books")
     private List<User> users;
 
+    @Column(name="img_path")
+    private String imgPath;
+
     @Override
     public String toString() {
         return "Book{" +

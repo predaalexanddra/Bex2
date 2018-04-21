@@ -1,28 +1,27 @@
 package com.db.bexlibrary.BexLibrary;
 
-import com.db.bexlibrary.BexLibrary.entities.Book;
-import com.db.bexlibrary.BexLibrary.repositories.BookRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import java.util.List;
-
+@EnableWebMvc
+@EnableAutoConfiguration
 @SpringBootApplication
-@EntityScan( basePackages = "com/db/bexlibrary/BexLibrary/entities")
+@EntityScan(basePackages = "com/db/bexlibrary/BexLibrary/entities")
+@ComponentScan(basePackages = "com.db.bexlibrary.BexLibrary")
 public class BexLibraryApplication {
 
-	public static void main(String[] args){
-		SpringApplication.run(BexLibraryApplication.class, args);
-	}
-//	@Override
-//	public void run(String[] args) {
-//
-//		List<Book> books=bookRepo.findAll();
-//		System.out.println(books);
-//
-//	}
+    private static ApplicationContext applicationContext;
 
+    public static void main(String[] args) {
+        applicationContext = SpringApplication.run(BexLibraryApplication.class, args);
+    }
+
+    public static <T> T getBean(Class<T> clazz) {
+        return applicationContext.getBean(clazz);
+    }
 }

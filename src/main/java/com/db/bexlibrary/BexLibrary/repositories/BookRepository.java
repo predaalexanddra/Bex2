@@ -10,8 +10,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public interface BookRepo extends JpaRepository<Book,Long> {
+public interface BookRepository extends JpaRepository<Book,Long> {
 
-    //List<Book> findBooksByCategory_IdCategory(Long id);
-    Book findBooksById(Long id);
+
 }
