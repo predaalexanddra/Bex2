@@ -35,6 +35,7 @@ public class Book {
 
     @NotNull
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "fk_bookCategory")
     private Category category;
 

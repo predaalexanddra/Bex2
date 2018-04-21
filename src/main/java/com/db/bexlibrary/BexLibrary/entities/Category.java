@@ -17,7 +17,6 @@ public class Category {
 
     @NotNull
     private String categoryName;
-    @JsonIgnore
     @OneToMany(mappedBy = "category")
     private List<Book> booklist;
 }
