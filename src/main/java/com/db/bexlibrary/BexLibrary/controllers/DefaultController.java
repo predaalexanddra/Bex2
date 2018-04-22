@@ -14,9 +14,7 @@ public class DefaultController {
     @Autowired
     protected SessionContext securityContext;
 
-    /**
-     * Use this to set the template that will be rendered on the page
-     */
+
     protected Model setTemplate(Model model, String template) {
         return model.addAttribute("template", template);
     }
